@@ -7,9 +7,8 @@
 </template>
 
 <script setup>
-import { products } from './products';
+import { size, flavors, solidToppings, liquidToppings } from './products';
 
-const items = [...products];
 </script>
 
 <style scoped>
