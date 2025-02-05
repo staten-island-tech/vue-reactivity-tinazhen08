@@ -222,6 +222,4 @@ const liquidToppings = [
   }
 ];
 
-
-
 export {size, flavors, solidToppings, liquidToppings}
