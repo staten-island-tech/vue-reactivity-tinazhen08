@@ -1,4 +1,4 @@
-const size = [
+const sizes = [
   {
     name: small,
     size: 6

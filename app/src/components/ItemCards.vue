@@ -1,14 +1,15 @@
 <template>
-    <div>
-        <h1>Card Title</h1>
-        <img src="" alt="">
-
+    <div class="card">
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
     </div>
 </template>
 
 <script setup>
-import { size, flavors, solidToppings, liquidToppings } from './products';
-
+defineProps({
+    title: String,
+    description: String
+})
 </script>
 
 <style scoped>
