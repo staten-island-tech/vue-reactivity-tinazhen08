@@ -1,13 +1,13 @@
 <template>
-    <div class="card">
-        <h1>{{ title }}</h1>
+    <div class="item-card">
+        <h1>{{ name }}</h1>
         <p>{{ description }}</p>
     </div>
 </template>
 
 <script setup>
 defineProps({
-    title: String,
+    name: String,
     description: String
 })
 </script>

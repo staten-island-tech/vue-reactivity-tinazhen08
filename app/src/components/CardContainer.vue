@@ -1,11 +1,11 @@
 <template>
     <div>
-        <ItemCards />
+        <FlavorCards />
     </div>
 </template>
 
 <script setup>
-import ItemCards from './ItemCards.vue';
+import FlavorCards from './FlavorCards.vue'; 
 </script>
 
 <style scoped>

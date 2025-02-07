@@ -1,18 +1,18 @@
 const sizes = [
   {
-    name: small,
+    name: "small",
     size: 6
   },
   {
-    name: medium,
+    name: "medium",
     size: 8
   },
   {
-    name: large,
+    name: "large",
     size: 12
   },
   {
-    name: XL,
+    name: "XL",
     size: 16
   }
 ]
@@ -222,4 +222,4 @@ const liquidToppings = [
   }
 ];
 
-export {size, flavors, solidToppings, liquidToppings}
+export {sizes, flavors, solidToppings, liquidToppings}

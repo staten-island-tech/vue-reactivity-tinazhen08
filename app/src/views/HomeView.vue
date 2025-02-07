@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import FlavorCards from '@/components/FlavorCards.vue';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <FlavorCards />
   </main>
 </template>
