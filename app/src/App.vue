@@ -84,8 +84,10 @@ nav a:first-of-type {
 }
 </style> -->
 <template>
-  <div>
-    <FlavorCards/>
+  <div class="container mx-auto">
+    <div class="flex flex-wrap">
+      <FlavorCards/>
+    </div>
   </div>
 </template>
 
