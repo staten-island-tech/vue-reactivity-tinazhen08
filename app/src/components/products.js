@@ -19,64 +19,139 @@ const sizes = [
 
 const flavors = [
   {
-    name: "Original",
-    description: "A classic, neutral flavor that serves as the base for many toppings and mix-ins, offering a creamy, smooth, and slightly sweet taste."
+    "name": "Original",
+    "description": "A classic, neutral flavor that serves as the base for many toppings and mix-ins, offering a creamy, smooth, and slightly sweet taste.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Vanilla",
-    description: "A rich and aromatic flavor made from vanilla beans, providing a sweet and creamy base that's perfect for pairing with a variety of toppings and sauces."
+    "name": "Vanilla",
+    "description": "A rich and aromatic flavor made from vanilla beans, providing a sweet and creamy base that's perfect for pairing with a variety of toppings and sauces.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Chocolate",
-    description: "A bold and indulgent flavor made from cocoa, offering a deep, sweet chocolate taste that complements many toppings and desserts."
+    "name": "Chocolate",
+    "description": "A bold and indulgent flavor made from cocoa, offering a deep, sweet chocolate taste that complements many toppings and desserts.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Strawberry",
-    description: "A fruity, sweet, and slightly tangy flavor that brings the essence of fresh strawberries to your dessert, perfect for a refreshing and summery treat."
+    "name": "Strawberry",
+    "description": "A fruity, sweet, and slightly tangy flavor that brings the essence of fresh strawberries to your dessert, perfect for a refreshing and summery treat.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Mango",
-    description: "A tropical and sweet flavor that captures the juicy richness of ripe mangoes, offering a vibrant and exotic taste that's perfect for warm weather."
+    "name": "Mango",
+    "description": "A tropical and sweet flavor that captures the juicy richness of ripe mangoes, offering a vibrant and exotic taste that's perfect for warm weather.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Peach",
-    description: "A sweet, juicy, and slightly tart flavor that embodies the taste of ripe peaches, perfect for adding a fruity and refreshing touch to any dessert."
+    "name": "Peach",
+    "description": "A sweet, juicy, and slightly tart flavor that embodies the taste of ripe peaches, perfect for adding a fruity and refreshing touch to any dessert.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Tart",
-    description: "A tangy and refreshing flavor with a hint of sourness, offering a crisp and zesty contrast to sweeter toppings, ideal for those who enjoy a bit of tartness."
+    "name": "Tart",
+    "description": "A tangy and refreshing flavor with a hint of sourness, offering a crisp and zesty contrast to sweeter toppings, ideal for those who enjoy a bit of tartness.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Coconut",
-    description: "A creamy, rich flavor that captures the essence of tropical coconut, offering a sweet and nutty taste that adds a smooth texture to desserts."
+    "name": "Coconut",
+    "description": "A creamy, rich flavor that captures the essence of tropical coconut, offering a sweet and nutty taste that adds a smooth texture to desserts.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Coffee",
-    description: "A bold, rich flavor with a slightly bitter, roasted taste that captures the essence of freshly brewed coffee, perfect for coffee lovers looking for a pick-me-up in their dessert."
+    "name": "Coffee",
+    "description": "A bold, rich flavor with a slightly bitter, roasted taste that captures the essence of freshly brewed coffee, perfect for coffee lovers looking for a pick-me-up in their dessert.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Pineapple",
-    description: "A sweet and tangy tropical flavor that evokes the juicy essence of fresh pineapple, offering a refreshing and slightly tart taste that's perfect for summer treats."
+    "name": "Pineapple",
+    "description": "A sweet and tangy tropical flavor that evokes the juicy essence of fresh pineapple, offering a refreshing and slightly tart taste that's perfect for summer treats.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Green Tea",
-    description: "A subtle, earthy flavor with a slightly grassy and refreshing taste, offering a unique and calming option for those looking for a lighter, more sophisticated flavor."
+    "name": "Green Tea",
+    "description": "A subtle, earthy flavor with a slightly grassy and refreshing taste, offering a unique and calming option for those looking for a lighter, more sophisticated flavor.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Blueberry",
-    description: "A sweet and slightly tangy flavor that captures the taste of fresh blueberries, offering a fruity and vibrant option that pairs well with many toppings."
+    "name": "Blueberry",
+    "description": "A sweet and slightly tangy flavor that captures the taste of fresh blueberries, offering a fruity and vibrant option that pairs well with many toppings.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Banana",
-    description: "A creamy and naturally sweet flavor that brings the taste of ripe bananas to your dessert, perfect for those who love smooth and rich fruity flavors."
+    "name": "Banana",
+    "description": "A creamy and naturally sweet flavor that brings the taste of ripe bananas to your dessert, perfect for those who love smooth and rich fruity flavors.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Lemon",
-    description: "A bright, zesty, and tangy flavor that brings the refreshing tartness of lemons to your dessert, offering a sharp contrast to creamy or sweet toppings."
+    "name": "Lemon",
+    "description": "A bright, zesty, and tangy flavor that brings the refreshing tartness of lemons to your dessert, offering a sharp contrast to creamy or sweet toppings.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   },
   {
-    name: "Caramel",
-    description: "A rich, sweet flavor with a buttery and slightly toasted sugar taste, offering a smooth and indulgent treat that pairs wonderfully with both fruity and creamy toppings."
+    "name": "Caramel",
+    "description": "A rich, sweet flavor with a buttery and slightly toasted sugar taste, offering a smooth and indulgent treat that pairs wonderfully with both fruity and creamy toppings.",
+    "amounts": {
+      "1": { "price": 2.50 },
+      "2": { "price": 4.00 },
+      "3": { "price": 5.50 }
+    }
   }
 ];
 

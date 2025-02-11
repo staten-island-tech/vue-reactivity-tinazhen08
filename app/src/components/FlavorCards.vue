@@ -1,17 +1,16 @@
 <template>
     <div>
-        <div class="card" v-for="(flavor, index) in flavors" :key="index">
-            <h1 class="card-title">{{ flavor.name }}</h1>
-            <p class="card-description">{{ flavor.description }}</p>
-            <button @click="cart.push({flavor, amount: 0.5})">0.5oz</button>
-            <button @click="cart.push({flavor, amount: 1})">1oz</button>
-            <button @click="cart.push({flavor, amount: 1.5})">1.5oz</button>
-        </div>
+        <ProductCard v-for="(flavor, index) in flavors" 
+            :key="index"
+            :name="flavor.name"
+            :description="flavor.description"
+        />
     </div>
   </template>
   
   <script setup>
   import { flavors, cart } from './products';
+  import ProductCard from './ProductCard.vue';
   console.log(cart)
   </script>
   

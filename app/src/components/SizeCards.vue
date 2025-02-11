@@ -1,15 +1,16 @@
 <template>
     <div>
-      <div v-for="(size, index) in sizes" :key="index">\
-        <h1 class="cup-title">{{ size.name }}</h1>
-        <p class="cup-size">{{ size.size }}</p>
-        <button @click="cart.push({max: size.size})"></button>
-      </div>  
+      <ProductCard v-for="(size, index) in sizes" 
+          :key="index"
+          :name="sizes.name"
+          :description="size.description"
+        />
     </div>
 </template>
 
 <script setup>
 import { sizes, cart } from './products';
+import ProductCard from './ProductCard.vue';
 console.log(cart)
 </script>
 
