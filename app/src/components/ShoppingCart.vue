@@ -5,7 +5,8 @@
 </template>
 
 <script setup>
-
+import { ref } from 'vue';
+const cart = [{}]
 </script>
 
 <style lang="scss" scoped>
