@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-const cart = [{}]
+import { reactive } from 'vue';
+const cart = reatice({});
 </script>
 
 <style lang="scss" scoped>
