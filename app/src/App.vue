@@ -86,14 +86,12 @@ nav a:first-of-type {
 <template>
   <div class="container mx-auto">
     <div class="flex flex-wrap">
-      <SizeCards/>
       <FlavorCards/>
     </div>
   </div>
 </template>
 
 <script setup>
-import SizeCards from './components/SizeCards.vue';
 import FlavorCards from './components/FlavorCards.vue';
 </script>
 

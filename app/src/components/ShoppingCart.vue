@@ -1,12 +1,14 @@
 <template>
-    <div class="cart">
+    <div class="rounded-md">
         
     </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue';
-const cart = reactive({});
+defineProps({
+    name: String,
+    price: Number
+})
 </script>
 
 <style lang="scss" scoped>

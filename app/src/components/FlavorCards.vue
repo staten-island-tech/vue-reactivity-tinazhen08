@@ -9,9 +9,8 @@
   </template>
   
   <script setup>
-  import { flavors, cart } from './products';
+  import { flavors } from './products';
   import ProductCard from './ProductCard.vue';
-  console.log(cart)
   </script>
   
   <style scoped>

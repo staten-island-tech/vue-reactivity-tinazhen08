@@ -297,6 +297,4 @@ const liquidToppings = [
   }
 ];
 
-const cart = []
-
-export {sizes, flavors, solidToppings, liquidToppings, cart}
+export {sizes, flavors, solidToppings, liquidToppings}

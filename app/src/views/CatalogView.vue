@@ -4,6 +4,10 @@ import FlavorCards from '@/components/FlavorCards.vue';
 
 <template>
   <main>
-    <FlavorCards />
+    <div class="container mx-auto">
+      <div class="flex flex-wrap">
+        <FlavorCards/>
+      </div>
+    </div>
   </main>
 </template>
