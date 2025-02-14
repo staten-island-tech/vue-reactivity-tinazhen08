@@ -6,7 +6,7 @@
 
 <script setup>
 import { reactive } from 'vue';
-const cart = reatice({});
+const cart = reactive({});
 </script>
 
 <style lang="scss" scoped>
