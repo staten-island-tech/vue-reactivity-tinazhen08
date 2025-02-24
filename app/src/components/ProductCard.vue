@@ -5,14 +5,12 @@
         <p class="description">{{ product.description }}</p>
         
         <label for="amount">Select Amount:</label>
-        <select v-model="selectedAmount" id="amount">
+        <select v-model="selectedAmount" id="amount" class="bg-white">
             <option v-for="(amount, key) in product.amounts" :value="key" :key="key">
                 {{ key }} - ${{ amount.price.toFixed(2) }}
             </option>
         </select>
         
-        <p v-if="selectedAmount">Selected Amount: {{ selectedAmount }} - Price: ${{ product.amounts[selectedAmount].price.toFixed(2) }}</p>
-
         <slot></slot>
     </div>
 </template>

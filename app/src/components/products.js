@@ -69,15 +69,6 @@ const flavors = [
     }
   },
   {
-    "name": "Tart",
-    "description": "A tangy and refreshing flavor with a hint of sourness, offering a crisp and zesty contrast to sweeter toppings, ideal for those who enjoy a bit of tartness.",
-    "amounts": {
-      "1": { "price": 2.50 },
-      "2": { "price": 4.00 },
-      "3": { "price": 5.50 }
-    }
-  },
-  {
     "name": "Coconut",
     "description": "A creamy, rich flavor that captures the essence of tropical coconut, offering a sweet and nutty taste that adds a smooth texture to desserts.",
     "amounts": {

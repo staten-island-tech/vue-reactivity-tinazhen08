@@ -1,54 +1,58 @@
 <template>
   <main class="bg-white text-gray-800">
     <div class="container mx-auto p-6">
-      <div class="flex flex-wrap">
-        <StoreHeaderVue />
+      <StoreHeaderVue />
 
-        <div class="shop-container w-full" v-if="!sizeSelected">
-          <div v-for="size in sizes" :key="size.name" class="size-option mb-4">
+      <div class="flex mt-6">
+        <div class="w-2/3 pr-6">
+          <div v-if="!sizeSelected">
+            <div v-for="size in sizes" :key="size.name" class="size-option mb-4">
+              <button
+                @click="chooseSize(size)"
+                class="bg-blue-100 text-blue-600 p-3 rounded-xl hover:bg-blue-200 focus:outline-none"
+              >
+                {{ size.name }} - {{ size.size }} oz
+              </button>
+            </div>
+          </div>
+
+          <div class="flavor-selection w-full" v-if="sizeSelected && !flavorSelected">
+            <div class="flavors grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <ProductCard
+                v-for="flavor in flavors"
+                :key="flavor.name"
+                :product="flavor"
+                :selectedAmount="selectedAmounts[flavor.name]"
+                @update:selectedAmount="updateSelectedAmount(flavor.name, $event)"
+                class="bg-blue-50 border border-blue-200 p-4 rounded-lg shadow-lg transition duration-300 hover:bg-blue-100 hover:shadow-2xl"
+              >
+                <button
+                  @click="selectFlavor(flavor)"
+                  class="bg-blue-200 text-blue-700 p-2 m-2 rounded-xl hover:bg-blue-300 transition duration-300"
+                >
+                  Add to Cart
+                </button>
+              </ProductCard>
+            </div>
+
             <button
-              @click="chooseSize(size)"
-              class="bg-blue-100 text-blue-600 p-3 rounded-xl hover:bg-blue-200 focus:outline-none"
+              v-if="Object.keys(selectedAmounts).length > 0"
+              @click="submitFlavors"
+              class="bg-blue-500 text-white p-3 rounded-xl mt-6 hover:bg-blue-600 focus:outline-none"
             >
-              {{ size.name }} - {{ size.size }} oz
+              Submit Flavors
             </button>
           </div>
-        </div>
 
-        <div class="flavor-selection w-full" v-if="sizeSelected && !flavorSelected">
-          <div class="flavors grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <ProductCard
-              v-for="flavor in flavors"
-              :key="flavor.name"
-              :product="flavor"
-              :selectedAmount="selectedAmounts[flavor.name]"
-              @update:selectedAmount="updateSelectedAmount(flavor.name, $event)"
-              class="bg-blue-50 border border-blue-200 p-4 rounded-lg shadow-lg transition duration-300 hover:bg-blue-100 hover:shadow-2xl"
-            >
-              <button
-                @click="selectFlavor(flavor)"
-                class="bg-blue-200 text-blue-700 p-2 rounded-xl hover:bg-blue-300 transition duration-300"
-              >
-                Add to Cart
-              </button>
-            </ProductCard>
+          <div v-if="flavorSelected" class="solid-toppings-selection mt-6">
+            <p class="text-xl font-semibold text-blue-500">Now, choose your toppings!</p>
           </div>
-
-          <button
-            v-if="Object.keys(selectedAmounts).length > 0"
-            @click="submitFlavors"
-            class="bg-blue-500 text-white p-3 rounded-xl mt-6 hover:bg-blue-600 focus:outline-none"
-          >
-            Submit Flavors
-          </button>
         </div>
 
-        <div v-if="flavorSelected" class="solid-toppings-selection mt-6">
-          <p class="text-xl font-semibold text-blue-500">Now, choose your toppings!</p>
+        <div class="w-1/3 pl-6">
+          <ShoppingCart v-for="products in cart" :key="products.name" :cart="cart" :item="product" />
         </div>
       </div>
-
-      <ShoppingCart v-for="products in cart" :key="products.name" :cart="cart" :item="product" />
     </div>
   </main>
 </template>
