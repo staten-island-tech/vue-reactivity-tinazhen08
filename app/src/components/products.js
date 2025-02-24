@@ -1,32 +1,28 @@
 const sizes = [
   {
-    name: "small",
-    size: 6
+    name: "Small",
+    size: 6,
+    price: "N/A"
   },
   {
-    name: "medium",
-    size: 8
+    name: "Medium",
+    size: 8,
+    price: "N/A"
   },
   {
-    name: "large",
-    size: 12
+    name: "Large",
+    size: 12,
+    price: "N/A"
   },
   {
-    name: "XL",
-    size: 16
+    name: "Extra-Large",
+    size: 16,
+    price: "N/A"
   }
-]
+];
+
 
 const flavors = [
-  {
-    "name": "Original",
-    "description": "A classic, neutral flavor that serves as the base for many toppings and mix-ins, offering a creamy, smooth, and slightly sweet taste.",
-    "amounts": {
-      "1": { "price": 2.50 },
-      "2": { "price": 4.00 },
-      "3": { "price": 5.50 }
-    }
-  },
   {
     "name": "Vanilla",
     "description": "A rich and aromatic flavor made from vanilla beans, providing a sweet and creamy base that's perfect for pairing with a variety of toppings and sauces.",
