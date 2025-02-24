@@ -141,7 +141,7 @@ const flavors = [
   }
 ];
 
-const solidToppings = [
+const toppings = [
   {
     name: "Chocolate Chips",
     description: "Small, round pieces of chocolate that melt easily, adding a sweet and rich chocolate flavor to ice cream, cookies, and baked goods."
@@ -217,11 +217,7 @@ const solidToppings = [
   {
     name: "Cinnamon Toast Crunch",
     description: "Crispy, cinnamon-sugared cereal pieces that add a sweet, spiced crunch to desserts, ideal for sprinkling on top of ice cream or blending into milkshakes."
-  }
-];
-
-const liquidToppings = [
-  {
+  },{
     name: "Chocolate Syrup",
     description: "A smooth, sweet syrup made from cocoa and sugar, perfect for drizzling over desserts, ice cream, or even in milk for a classic chocolate milk treat."
   },
@@ -283,4 +279,4 @@ const liquidToppings = [
   }
 ];
 
-export {sizes, flavors, solidToppings, liquidToppings}
+export {sizes, flavors, toppings}

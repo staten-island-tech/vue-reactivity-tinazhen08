@@ -1,8 +1,12 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="cart">
+    <ShoppingCart/>
   </div>
 </template>
+
+<script setup>
+import ShoppingCart from '@/components/ShoppingCart.vue';
+</script>
 
 <style>
 @media (min-width: 1024px) {
