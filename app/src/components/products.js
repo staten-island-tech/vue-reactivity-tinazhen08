@@ -2,25 +2,24 @@ const sizes = [
   {
     name: "Small",
     size: 6,
-    price: "N/A"
+    price: 0
   },
   {
     name: "Medium",
     size: 8,
-    price: "N/A"
+    price: 0
   },
   {
     name: "Large",
     size: 12,
-    price: "N/A"
+    price: 0
   },
   {
     name: "Extra-Large",
     size: 16,
-    price: "N/A"
+    price: 0
   }
 ];
-
 
 const flavors = [
   {

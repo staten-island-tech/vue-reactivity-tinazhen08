@@ -8,8 +8,16 @@
         class="cart-item flex flex-col bg-white p-4 rounded-lg shadow-md w-1/3"
       >
         <h3 class="text-lg font-semibold text-blue-600">{{ item.name }}</h3>
-        <p v-if="item.amount">Amount:{{ item.amount }}</p>
-        <p>Price: ${{ item.price }}</p>
+        <p v-if="item.amount">Amount: {{ item.amount }} oz</p>
+        <p v-if="item.size">Size: {{ item.size }} oz</p>
+        <p>Price: ${{ item.price.toFixed(2) }}</p>
+        <button
+          v-if="!item.size"
+          @click="removeFromCart(item)"
+          class="bg-blue-500 text-white p-2 rounded-lg mt-2 hover:bg-blue-600"
+        >
+          Remove
+        </button>
       </div>
     </div>
   </div>
@@ -19,6 +27,13 @@
 defineProps({
   cart: Array,
 })
+
+// Emit an event to remove the item from the cart (got helped by ai so remove button would function properly)
+const emit = defineEmits(["removeFromCart"]);
+
+const removeFromCart = (item) => {
+  emit("removeFromCart", item);
+};
 </script>
 
 <style scoped>

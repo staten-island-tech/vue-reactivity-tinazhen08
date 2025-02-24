@@ -23,45 +23,27 @@
                 :key="flavor.name"
                 :product="flavor"
                 :selectedAmount="selectedAmounts[flavor.name]"
-                @update:selectedAmount="updateSelectedAmount(flavor.name, $event)"
+                @add-to-cart="addToCart"
                 class="bg-blue-50 border border-blue-200 p-4 rounded-lg shadow-lg transition duration-300 hover:bg-blue-100 hover:shadow-2xl"
-              >
-                <button
-                  @click="selectFlavor(flavor)"
-                  class="bg-blue-200 text-blue-700 p-2 m-2 rounded-xl hover:bg-blue-300 transition duration-300"
-                >
-                  Add to Cart
-                </button>
-              </ProductCard>
+              />
             </div>
-
-            <button
-              v-if="Object.keys(selectedAmounts).length > 0"
-              @click="submitFlavors"
-              class="bg-blue-500 text-white p-3 rounded-xl mt-6 hover:bg-blue-600 focus:outline-none"
-            >
-              Submit Flavors
-            </button>
-          </div>
-
-          <div v-if="flavorSelected" class="solid-toppings-selection mt-6">
-            <p class="text-xl font-semibold text-blue-500">Now, choose your toppings!</p>
           </div>
         </div>
 
         <div class="w-1/3 pl-6">
-          <ShoppingCart v-for="products in cart" :key="products.name" :cart="cart" :item="product" />
+          <ShoppingCart :cart="cart" @removeFromCart="removeFromCart"/>
         </div>
+        
       </div>
     </div>
   </main>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import StoreHeaderVue from '../components/StoreHeader.vue'
 import ProductCard from '../components/ProductCard.vue'
 import ShoppingCart from '@/components/ShoppingCart.vue'
-import { ref } from 'vue'
 import { sizes, flavors } from '../components/products'
 
 const cart = ref([])
@@ -76,30 +58,31 @@ const chooseSize = (size) => {
   sizeSelected.value = true
 }
 
-const selectFlavor = (flavor) => {
-  selectedAmounts.value = { [flavor.name]: flavor.amounts[0].key }
-}
-
-const updateSelectedAmount = (flavorName, amount) => {
-  selectedAmounts.value[flavorName] = amount
-}
-
-const submitFlavors = () => {
-  const selectedFlavor = Object.keys(selectedAmounts.value)[0]
-  const flavor = flavors.find((f) => f.name === selectedFlavor)
-  const amount = selectedAmounts.value[selectedFlavor]
-
-  const flavorInCart = cart.value.find((item) => item.name === flavor.name)
-
-  if (!flavorInCart) {
-    cart.value.push({
-      name: flavor.name,
-      amount,
-      price: flavor.amounts[amount].price,
-    })
+const addToCart = (item) => {
+  if (selectedSize.value && item.amount > selectedSize.value.size) {
+    alert(`The amount of ${item.flavor} you selected exceeds the size you chose. Please select a smaller amount.`);
+    return;
   }
 
-  flavorSelected.value = true
+  const existingItem = cart.value.find(cartItem => cartItem.name === item.flavor)
+  if (existingItem) {
+    existingItem.amount = item.amount
+    existingItem.price = item.price
+  } else {
+    cart.value.push({
+      name: item.flavor,
+      amount: item.amount,
+      price: item.price,
+    })
+  }
+  console.log(cart.value)
+}
+
+const removeFromCart = (item) => {
+  const index = cart.value.findIndex(cartItem => cartItem.name === item.name);
+  if (index !== -1) {
+    cart.value.splice(index, 1);
+  }
 }
 </script>
 
