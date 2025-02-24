@@ -8,7 +8,7 @@
         class="cart-item flex flex-col bg-white p-4 rounded-lg shadow-md w-1/3"
       >
         <h3 class="text-lg font-semibold text-blue-600">{{ item.name }}</h3>
-        <p>Amount: {{ item.amount }}</p>
+        <p v-if="item.amount">Amount:{{ item.amount }}</p>
         <p>Price: ${{ item.price }}</p>
       </div>
     </div>
