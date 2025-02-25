@@ -1,17 +1,15 @@
 <template>
-    <div class="card w-60 bg-white p-3 rounded-l" >
-        <div v-for="(size, index) in sizes" :key="index">
-            <h1 class="name">{{ size.name }}</h1>
-            <p class="size">{{ size.size }}</p>
-            <slot></slot>
-        </div>
-    </div>
+  <div class="card w-60 bg-white p-3 rounded-lg shadow-lg">
+    <h1 class="name font-bold text-xl text-blue-600">{{ size.name }}</h1>
+    <p class="size text-sm text-gray-500">{{ size.size }} oz</p>
+    <slot></slot>
+  </div>
 </template>
 
 <script setup>
-import { sizes } from "./products";
+defineProps({
+  size: Object,
+})
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style scoped></style>
