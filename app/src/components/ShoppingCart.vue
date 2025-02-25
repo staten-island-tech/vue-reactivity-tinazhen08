@@ -34,6 +34,5 @@ const removeFromCart = (item) => {
 </script>
 
 <style scoped>
+
 </style>
-
-
