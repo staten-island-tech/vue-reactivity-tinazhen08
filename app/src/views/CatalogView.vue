@@ -52,7 +52,6 @@
         <div class="w-1/3 pl-6">
           <ShoppingCart :cart="cart" @removeFromCart="removeFromCart" @updateAmount="updateAmount"/>
           
-          <!-- Cart Totals Section with updated style -->
           <div class="mt-4 bg-white p-6 rounded-lg shadow-md border border-gray-200">
             <h2 class="text-xl font-bold text-blue-600">Cart Totals</h2>
             <div class="mt-4 text-lg text-gray-700">
