@@ -4,7 +4,7 @@
     <div class="cart-items flex flex-wrap gap-4">
       <div
         v-for="item in cart"
-        :key="item.uniqueId"
+        :key="item.name"
         class="cart-item flex flex-col bg-white p-4 rounded-lg shadow-md w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-2/5 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
       >
         <h3 class="text-lg font-semibold text-blue-600">{{ item.name }}</h3>

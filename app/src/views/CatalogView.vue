@@ -50,8 +50,7 @@
         </div>
 
         <div class="w-1/3 pl-6">
-          <ShoppingCart :cart="cart" @removeFromCart="removeFromCart" @updateAmount="updateAmount"/>
-          
+          <ShoppingCart :cart="cart" @removeFromCart="removeFromCart"/>
           <div class="mt-4 bg-white p-6 rounded-lg shadow-md border border-gray-200">
             <h2 class="text-xl font-bold text-blue-600">Cart Totals</h2>
             <div class="mt-4 text-lg text-gray-700">
@@ -91,19 +90,12 @@ const selectedSize = ref(null)
 
 const chooseSize = (size) => {
   selectedSize.value = size
-  const existingItem = cart.value.find(item => item.name === size.name && item.type === 'size')
-
-  if (existingItem) {
-    existingItem.amount += 1
-    existingItem.price = size.price
-  } else {
-    cart.value.push({
-      name: size.name,
-      amount: size.size,
-      price: size.price,
-      type: 'size',
-    })
-  }
+  cart.value.push({
+    name: size.name,
+    amount: size.size,
+    price: size.price,
+    type: 'size',
+  })
   sizeSelected.value = true
 }
 
@@ -114,7 +106,7 @@ const addFlavorToCart = (flavorData) => {
     .filter(item => item.type === 'flavor' && item.size === selectedSize.value.name)
     .reduce((total, item) => total + Number(item.amount), 0);
 
-  if (selectedSize.value && (totalFlavorAmount + Number(amount)) > selectedSize.value.maxFlavorsAmount) {
+  if (totalFlavorAmount + Number(amount) > selectedSize.value.maxFlavorsAmount) {
     alert(`You can only add up to ${selectedSize.value.maxFlavorsAmount} oz of flavors for the ${selectedSize.value.name} size.`);
     return;
   }
@@ -141,13 +133,13 @@ const addFlavorToCart = (flavorData) => {
 };
 
 const addToppingToCart = (toppingData) => {
-  const { topping, amount, weight } = toppingData;
+  const { topping, amount } = toppingData;
 
   const totalToppingAmount = cart.value
     .filter(item => item.type === 'topping' && item.size === selectedSize.value.name)
     .reduce((total, item) => total + Number(item.amount), 0);
 
-  if (selectedSize.value && (totalToppingAmount + Number(amount)) > selectedSize.value.maxToppingsAmount) {
+  if (totalToppingAmount + Number(amount) > selectedSize.value.maxToppingsAmount) {
     alert(`You can only add up to ${selectedSize.value.maxToppingsAmount} oz of toppings for the ${selectedSize.value.name} size.`);
     return;
   }
@@ -169,24 +161,14 @@ const addToppingToCart = (toppingData) => {
       price: Number(amount) * 0.5,
       type: 'topping',
       size: selectedSize.value.name,
-      weight: weight,
     });
   }
 };
 
 const removeFromCart = (item) => {
-  const index = cart.value.findIndex(cartItem => cartItem.name === item.name && cartItem.type === item.type && cartItem.size === item.size && (cartItem.type !== 'topping' || cartItem.flavor === item.flavor))
+  const index = cart.value.findIndex(cartItem => cartItem.name === item.name && cartItem.type === item.type && cartItem.size === item.size)
   if (index !== -1) {
     cart.value.splice(index, 1)
-  }
-}
-
-const updateAmount = (item, newAmount) => {
-  const existingItem = cart.value.find(cartItem => cartItem.name === item.name && cartItem.type === item.type && cartItem.size === item.size && (cartItem.type !== 'topping' || cartItem.flavor === item.flavor))
-  
-  if (existingItem) {
-    existingItem.amount = newAmount
-    existingItem.price = item.price * newAmount
   }
 }
 
