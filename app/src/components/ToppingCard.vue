@@ -41,8 +41,7 @@
     if (amount) {
       emit('add-to-cart', {
         topping: props.product.name,
-        amount: selectedAmount.value,
-        price: amount.price,
+        amount: selectedAmount.value
       });
     } else {
       alert("Please select a valid amount for the flavor.");

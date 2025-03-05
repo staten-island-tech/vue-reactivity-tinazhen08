@@ -41,8 +41,7 @@ const addToCart = () => {
   if (amount) {
     emit('add-to-cart', {
       flavor: props.product.name,
-      amount: selectedAmount.value,
-      price: amount.price,
+      amount: selectedAmount.value
     });
   } else {
     alert("Please select a valid amount for the flavor.");
